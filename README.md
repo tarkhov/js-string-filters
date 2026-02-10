@@ -117,7 +117,7 @@ import { words } from 'string-filters'
 // Output: ['word1', 'word2', 'word3']
 const output = words('word1 123 word2 word3')
 
-// Output: ['word1', '123' 'word2', 'word3']
+// Output: ['word1', '123', 'word2', 'word3']
 const output = words('word1 123 word2 word3', true)
 ```
 
