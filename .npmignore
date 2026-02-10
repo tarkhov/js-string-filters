@@ -172,4 +172,5 @@ vite.config.ts.timestamp-*
 .vite/
 
 # Custom
-package-lock.json
+demo
+docs

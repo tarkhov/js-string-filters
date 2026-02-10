@@ -1,0 +1,41 @@
+{
+  "name": "string-filters",
+  "version": "0.1.0",
+  "description": "Fast native javascript string filters library.",
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/string-filters.umd.cjs",
+  "module": "./dist/string-filters.js",
+  "exports": {
+    ".": {
+      "import": "./dist/string-filters.js",
+      "require": "./dist/string-filters.umd.cjs"
+    }
+  },
+  "keywords": [
+    "js",
+    "javascript",
+    "string",
+    "filters"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tarkhov/js-string-filters.git"
+  },
+  "author": "Tarkhov",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tarkhov/js-string-filters/issues"
+  },
+  "homepage": "https://tarkhov.github.io/js-string-filters/",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^7.3.1"
+  }
+}
