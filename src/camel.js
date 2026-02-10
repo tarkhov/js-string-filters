@@ -1,4 +1,4 @@
-import upper from './upper'
+import capitalize from './capitalize'
 import words from './words'
 
 export default function (string, first = false, numbers = false) {
@@ -6,12 +6,12 @@ export default function (string, first = false, numbers = false) {
   if (list.length > 1) {
     if (first) {
       list = list.map(function (value) {
-        return upper(value)
+        return capitalize(value)
       })
     } else {
       let first = list.shift()
       list = list.map(function (value) {
-        return upper(value)
+        return capitalize(value)
       })
       list.unshift(first)
     }

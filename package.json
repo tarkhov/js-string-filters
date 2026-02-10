@@ -3,9 +3,7 @@
   "version": "0.1.0",
   "description": "Fast native javascript string filters library.",
   "type": "module",
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "main": "./dist/string-filters.umd.cjs",
   "module": "./dist/string-filters.js",
   "exports": {
@@ -29,13 +27,14 @@
   "bugs": {
     "url": "https://github.com/tarkhov/js-string-filters/issues"
   },
-  "homepage": "https://tarkhov.github.io/js-string-filters/",
+  "homepage": "https://github.com/tarkhov/js-string-filters",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview"
   },
   "devDependencies": {
-    "vite": "^7.3.1"
+    "vite": "^7.3.1",
+    "vite-plugin-babel": "^1.5.1"
   }
 }
