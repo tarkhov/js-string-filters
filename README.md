@@ -12,9 +12,10 @@ Fast native javascript string filters library.
    2. [Capitalize](#capitalize)
    3. [Kebab case](#kebab-case)
    4. [Pad](#pad)
-   5. [Snake case](#snake-case)
-   6. [Truncate](#truncate)
-   7. [Words](#words)
+   5. [Replace words](#replace-words)
+   6. [Snake case](#snake-case)
+   7. [Split words](#split-words)
+   8. [Truncate](#truncate)
 3. [Author](#author)
 4. [License](#license)
 
@@ -40,19 +41,19 @@ unzip js-string-filters.zip
 ### Camel case
 
 ```js
-import { camel } from 'string-filters'
+import { camelCase } from 'string-filters'
 
 // Output: camelCase
-const output = camel('camel case')
+const output = camelCase('camel case')
 
 // Output: CamelCase
-const output = camel('camel case', true)
+const output = camelCase('camel case', true)
 
 // Output: camel123Case
-const output = camel('camel 123 case', false, true)
+const output = camelCase('camel 123 case', false, true)
 
 // Output: Camel123Case
-const output = camel('camel 123 case', true, true)
+const output = camelCase('camel 123 case', true, true)
 ```
 
 ### Capitalize
@@ -70,13 +71,13 @@ const output = capitalize('cAPitaliZE', true)
 ### Kebab case
 
 ```js
-import { kebab } from 'string-filters'
+import { kebabCase } from 'string-filters'
 
 // Output: kebab-case
-const output = kebab('kebab case')
+const output = kebabCase('kebab case')
 
 // Output: kebab-123-case
-const output = kebab('kebab 123 case', true)
+const output = kebabCase('kebab 123 case', true)
 ```
 
 ### Pad
@@ -88,16 +89,37 @@ import { pad } from 'string-filters'
 const output = pad('pad', 10, '_')
 ```
 
+### Replace words
+
+```js
+import { replaceWords } from 'string-filters'
+
+// Output: Word1 Word2 Word3
+const output = replaceWords('word1 word2 word3', true, capitalize)
+```
+
 ### Snake case
 
 ```js
-import { snake } from 'string-filters'
+import { snakeCase } from 'string-filters'
 
 // Output: snake_case
-const output = snake('snake case')
+const output = snakeCase('snake case')
 
 // Output: snake_123_case
-const output = snake('snake 123 case', true)
+const output = snakeCase('snake 123 case', true)
+```
+
+### Split words
+
+```js
+import { splitWords } from 'string-filters'
+
+// Output: ['word1', 'word2', 'word3']
+const output = splitWords('word1 123 word2 word3')
+
+// Output: ['word1', '123', 'word2', 'word3']
+const output = splitWords('word1 123 word2 word3', true)
 ```
 
 ### Truncate
@@ -107,18 +129,6 @@ import { truncate } from 'string-filters'
 
 // Output: trunc...
 const output = truncate('truncate', 5, '...')
-```
-
-### Words
-
-```js
-import { words } from 'string-filters'
-
-// Output: ['word1', 'word2', 'word3']
-const output = words('word1 123 word2 word3')
-
-// Output: ['word1', '123', 'word2', 'word3']
-const output = words('word1 123 word2 word3', true)
 ```
 
 ## Author

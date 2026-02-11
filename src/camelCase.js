@@ -1,8 +1,8 @@
 import capitalize from './capitalize'
-import words from './words'
+import splitWords from './splitWords'
 
 export default function (string, first = false, numbers = false) {
-  let list = words(string, numbers)
+  let list =splitWords(string, numbers)
   if (list.length > 1) {
     if (first) {
       list = list.map(function (value) {

@@ -1,17 +1,19 @@
-import camel from './camel'
+import camelCase from './camelCase'
 import capitalize from './capitalize'
-import kebab from './kebab'
+import kebabCase from './kebabCase'
 import pad from './pad'
-import snake from './snake'
+import replaceWords from './replaceWords'
+import snakeCase from './snakeCase'
+import splitWords from './splitWords'
 import truncate from './truncate'
-import words from './words'
 
 export {
-  camel,
+  camelCase,
   capitalize,
-  kebab,
+  kebabCase,
   pad,
-  snake,
-  truncate,
-  words
+  replaceWords,
+  snakeCase,
+  splitWords,
+  truncate
 }
