@@ -1,7 +1,8 @@
 export default function (string, numbers = false) {
-  if (numbers) {
-    return string.match(/[\p{L}\p{N}-]+/gu)
-  } else {
-    return string.match(/[\p{L}-]+/gu)
+  let pattern = (numbers) ? /[\p{L}\p{N}-]+/gu : /[\p{L}-]+/gu
+  let words = string.match(pattern)
+  if (words.length <= 1) {
+    return null
   }
+  return words.map(word => word.toLowerCase()).join('-')
 }

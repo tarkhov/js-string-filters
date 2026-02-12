@@ -1,51 +1,49 @@
-function a(e, t = !1) {
-  let r = e.charAt(0).toUpperCase(), n = e.slice(1);
-  return t && (n = n.toLowerCase()), `${r}${n}`;
+function a(r, t = !1) {
+  let n = r.charAt(0).toUpperCase(), e = r.slice(1);
+  return t && (e = e.toLowerCase()), `${n}${e}`;
 }
-function c(e, t = !1) {
-  return t ? e.match(/[\p{L}\p{N}]+/gu) : e.match(/[\p{L}]+/gu);
+function s(r, t = { numbers: !1, lower: !1 }) {
+  let n = t.numbers ? /[\p{L}\p{N}]+/gu : /[\p{L}]+/gu, e = r.match(n);
+  if (e.length <= 1)
+    return null;
+  let l = e.shift();
+  return t.lower && (l = l.toLowerCase()), e = e.map((u) => a(u, t.lower)), e.unshift(l), e.join("");
 }
-function l(e, t = !1, r = !1) {
-  let n = c(e, r);
-  if (n.length > 1) {
-    if (t)
-      n = n.map(function(u) {
-        return a(u);
-      });
-    else {
-      let u = n.shift();
-      n = n.map(function(f) {
-        return a(f);
-      }), n.unshift(u);
-    }
-    return n.join("");
-  }
+function o(r, t = !1) {
+  let n = t ? /[\p{L}\p{N}]+/gu : /[\p{L}]+/gu, e = r.match(n);
+  return e.length <= 1 ? null : e.map((l) => l.toLowerCase()).join("");
 }
-function i(e, t = !1) {
-  return t ? e.match(/[\p{L}\p{N}-]+/gu) : e.match(/[\p{L}-]+/gu);
+function p(r, t = !1) {
+  let n = t ? /[\p{L}\p{N}-]+/gu : /[\p{L}-]+/gu, e = r.match(n);
+  return e.length <= 1 ? null : e.map((l) => l.toLowerCase()).join("-");
 }
-function p(e, t, r = " ") {
-  const n = Math.floor((t - e.length) / 2) + e.length;
-  return e.padStart(n, r).padEnd(t, r);
+function f(r, t, n = " ") {
+  const e = Math.floor((t - r.length) / 2) + r.length;
+  return r.padStart(e, n).padEnd(t, n);
 }
-function s(e, t, r) {
-  return e.replace(new RegExp("\\p{L}+", "gu"), function(n) {
-    return r(n, t);
-  });
+function i(r, t = { numbers: !1, lower: !1 }) {
+  let n = t.numbers ? /[\p{L}\p{N}]+/gu : /[\p{L}]+/gu, e = r.match(n);
+  return e.length <= 1 ? null : e.map((l) => a(l, t.lower)).join("");
 }
-function o(e, t = !1) {
-  return t ? e.match(/[\p{L}\p{N}_]+/gu) : e.match(/[\p{L}_]+/gu);
+function c(r, t = !1) {
+  let n = t ? /[\p{L}\p{N}_]+/gu : /[\p{L}_]+/gu, e = r.match(n);
+  return e.length <= 1 ? null : e.map((l) => l.toLowerCase()).join("_");
 }
-function h(e, t = 32, r = "...") {
-  return e.substring(0, t) + r;
+function m(r, t = { numbers: !1, lower: !1 }) {
+  let n = t.numbers ? /[\p{L}\p{N}-]+/gu : /[\p{L}-]+/gu, e = r.match(n);
+  return e.length <= 1 ? null : e.map((l) => a(l, t.lower)).join("-");
+}
+function g(r, t = 32, n = "...") {
+  return r.substring(0, t) + n;
 }
 export {
-  l as camelCase,
+  s as camelCase,
   a as capitalize,
-  i as kebabCase,
-  p as pad,
-  s as replaceWords,
-  o as snakeCase,
-  c as splitWords,
-  h as truncate
+  o as flatCase,
+  p as kebabCase,
+  f as pad,
+  i as pascalCase,
+  c as snakeCase,
+  m as trainCase,
+  g as truncate
 };
