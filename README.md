@@ -4,10 +4,11 @@ Fast native javascript string filters library.
 
 ### Contents
 
-1. [Installation](#installation)
+1. [Compatibility](#compatibility)
+2. [Installation](#installation)
    1. [NPM](#npm)
    2. [Manually](#manually)
-2. [Usage](#usage)
+3. [Usage](#usage)
    1. [Camel case](#camel-case)
    2. [Capitalize](#capitalize)
    3. [Flat case](#flat-case)
@@ -17,8 +18,17 @@ Fast native javascript string filters library.
    7. [Snake case](#snake-case)
    8. [Train case](#train-case)
    9. [Truncate](#truncate)
-3. [Author](#author)
-4. [License](#license)
+4. [Author](#author)
+5. [License](#license)
+
+## Compatibility
+
+Browser | Version
+------- | -------
+Chrome | >= 107
+Edge | >= 107
+Firefox | >= 104
+Safari | >= 16
 
 ## Installation
 

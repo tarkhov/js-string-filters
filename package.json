@@ -3,7 +3,9 @@
   "version": "0.1.0",
   "description": "Fast native javascript string filters library.",
   "type": "module",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "main": "./dist/string-filters.umd.cjs",
   "module": "./dist/string-filters.js",
   "exports": {
@@ -13,10 +15,19 @@
     }
   },
   "keywords": [
-    "js",
-    "javascript",
     "string",
-    "filters"
+    "filter",
+    "filters",
+    "formatter",
+    "string-manipulation",
+    "text-processing",
+    "utility",
+    "validation",
+    "transformation",
+    "sanitize",
+    "input-mask",
+    "javascript",
+    "js"
   ],
   "repository": {
     "type": "git",
@@ -34,7 +45,6 @@
     "preview": "vite preview"
   },
   "devDependencies": {
-    "vite": "^7.3.1",
-    "vite-plugin-babel": "^1.5.1"
+    "vite": "^7.3.1"
   }
 }
