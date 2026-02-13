@@ -6,10 +6,5 @@ export default function (string, numbers = false) {
   if (words.length <= 1) {
     return null
   }
-
-  let first = words.shift()
-  first = first.toLowerCase()
-  words = words.map(word => capitalize(word))
-  words.unshift(first)
-  return words.join('')
+  return words.map(word => capitalize(word)).join(' ')
 }

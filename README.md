@@ -16,8 +16,9 @@ Fast native javascript string filters library.
    5. [Pad](#pad)
    6. [Pascal case](#pascal-case)
    7. [Snake case](#snake-case)
-   8. [Train case](#train-case)
-   9. [Truncate](#truncate)
+   8. [Title case](#title-case)
+   9. [Train case](#train-case)
+   10. [Truncate](#truncate)
 4. [Author](#author)
 5. [License](#license)
 
@@ -56,18 +57,10 @@ import { camelCase } from 'string-filters'
 
 let result = ''
 result = camelCase('camel 123 casE')
-// Output: camelCasE
-console.log(result)
-
-result = camelCase('camel 123 casE', { numbers: true })
-// Output: camel123CasE
-console.log(result)
-
-result = camelCase('cameL 123 casE', { lower: true })
 // Output: camelCase
 console.log(result)
 
-result = camelCase('cameL 123 casE', { numbers: true, lower: true })
+result = camelCase('camel 123 casE', true)
 // Output: camel123Case
 console.log(result)
 ```
@@ -77,12 +70,7 @@ console.log(result)
 ```js
 import { capitalize } from 'string-filters'
 
-let result = ''
-result = capitalize('capitalizE')
-// Output: CapitalizE
-console.log(result)
-
-result = capitalize('cApitalizE', true)
+let result = capitalize('capitalizE')
 // Output: Capitalize
 console.log(result)
 ```
@@ -135,18 +123,10 @@ import { pascalCase } from 'string-filters'
 
 let result = ''
 result = pascalCase('pascal 123 casE')
-// Output: PascalCasE
-console.log(result)
-
-result = pascalCase('pascal 123 casE', { numbers: true })
-// Output: Pascal123CasE
-console.log(result)
-
-result = pascalCase('pascaL 123 casE', { lower: true })
 // Output: PascalCase
 console.log(result)
 
-result = pascalCase('pascaL 123 casE', { numbers: true, lower: true })
+result = pascalCase('pascal 123 casE', true)
 // Output: Pascal123Case
 console.log(result)
 ```
@@ -166,6 +146,21 @@ result = snakeCase('Snake 123 Case', true)
 console.log(result)
 ```
 
+### Title case
+
+```js
+import { titleCase } from 'string-filters'
+
+let result = ''
+result = titleCase('title 123 casE')
+// Output: Title Case
+console.log(result)
+
+result = titleCase('title 123 casE', true)
+// Output: Title 123 Case
+console.log(result)
+```
+
 ### Train case
 
 ```js
@@ -173,18 +168,10 @@ import { trainCase } from 'string-filters'
 
 let result = ''
 result = trainCase('train 123 casE')
-// Output: Train-CasE
-console.log(result)
-
-result = trainCase('train 123 casE', { numbers: true })
-// Output: Train-123-CasE
-console.log(result)
-
-result = trainCase('traiN 123 casE', { lower: true })
 // Output: Train-Case
 console.log(result)
 
-result = trainCase('traiN 123 casE', { numbers: true, lower: true })
+result = trainCase('train 123 casE', true)
 // Output: Train-123-Case
 console.log(result)
 ```

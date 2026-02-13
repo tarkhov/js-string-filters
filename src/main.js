@@ -5,6 +5,7 @@ import kebabCase from './kebabCase'
 import pad from './pad'
 import pascalCase from './pascalCase'
 import snakeCase from './snakeCase'
+import titleCase from './titleCase'
 import trainCase from './trainCase'
 import truncate from './truncate'
 
@@ -16,6 +17,7 @@ export {
   pad,
   pascalCase,
   snakeCase,
+  titleCase,
   trainCase,
   truncate
 }
