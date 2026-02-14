@@ -1,72 +1,58 @@
-function a(r, e = !1) {
-  let n = r.charAt(0).toUpperCase(), t = r.slice(1);
-  return e && (t = t.toLowerCase()), `${n}${t}`;
+function a(n, t = !1) {
+  let r = n.charAt(0).toUpperCase(), e = n.slice(1);
+  return t && (e = e.toLowerCase()), `${r}${e}`;
 }
-function s(r, e = { numbers: !1, lower: !1 }) {
-  let n = /[\p{L}]+/gu;
-  typeof e.numbers < "u" && e.numbers && (n = /[\p{L}\p{N}]+/gu);
-  let t = r.match(n);
-  if (t.length <= 1)
-    return null;
-  let l = t.shift();
-  const u = typeof e.lower < "u" ? e.lower : !1;
-  return u && (l = l.toLowerCase()), t = t.map((f) => a(f, u)), t.unshift(l), t.join("");
+function o(n, t = { numbers: !1, lower: !1 }) {
+  const r = t?.numbers ? /[\p{L}\p{N}]+/gu : /[\p{L}]+/gu;
+  let e = n.match(r);
+  if (e.length <= 1) return null;
+  let l = e.shift();
+  const u = t?.lower;
+  return u && (l = l.toLowerCase()), e = e.map((s) => a(s, u)), e.unshift(l), e.join("");
 }
-function o(r, e = !1) {
-  let n = e ? /[\p{L}\p{N}]+/gu : /[\p{L}]+/gu, t = r.match(n);
-  return t.length <= 1 ? null : t.map((l) => l.toLowerCase()).join("");
+function p(n, t = !1) {
+  let r = t ? /[\p{L}\p{N}]+/gu : /[\p{L}]+/gu, e = n.match(r);
+  return e.length <= 1 ? null : e.map((l) => l.toLowerCase()).join("");
 }
-function p(r, e = !1) {
-  let n = e ? /[\p{L}\p{N}-]+/gu : /[\p{L}-]+/gu, t = r.match(n);
-  return t.length <= 1 ? null : t.map((l) => l.toLowerCase()).join("-");
+function f(n, t = !1) {
+  let r = t ? /[\p{L}\p{N}-]+/gu : /[\p{L}-]+/gu, e = n.match(r);
+  return e.length <= 1 ? null : e.map((l) => l.toLowerCase()).join("-");
 }
-function i(r, e, n = " ") {
-  const t = Math.floor((e - r.length) / 2) + r.length;
-  return r.padStart(t, n).padEnd(e, n);
+function i(n, t, r = " ") {
+  const e = Math.floor((t - n.length) / 2) + n.length;
+  return n.padStart(e, r).padEnd(t, r);
 }
-function w(r, e = { numbers: !1, lower: !1 }) {
-  let n = /[\p{L}]+/gu;
-  typeof e.numbers < "u" && e.numbers && (n = /[\p{L}\p{N}]+/gu);
-  let t = r.match(n);
-  if (t.length <= 1)
-    return null;
-  const l = typeof e.lower < "u" ? e.lower : !1;
-  return t.map((u) => a(u, l)).join("");
+function c(n, t = { numbers: !1, lower: !1 }) {
+  const r = t?.numbers ? /[\p{L}\p{N}]+/gu : /[\p{L}]+/gu;
+  let e = n.match(r);
+  return e.length <= 1 ? null : e.map((l) => a(l, t?.lower)).join("");
 }
-function c(r, e = !1) {
-  let n = e ? /[\p{L}\p{N}_]+/gu : /[\p{L}_]+/gu, t = r.match(n);
-  return t.length <= 1 ? null : t.map((l) => l.toLowerCase()).join("_");
+function m(n, t = !1) {
+  let r = t ? /[\p{L}\p{N}_]+/gu : /[\p{L}_]+/gu, e = n.match(r);
+  return e.length <= 1 ? null : e.map((l) => l.toLowerCase()).join("_");
 }
-function d(r, e = { numbers: !1, lower: !1 }) {
-  let n = /[\p{L}]+/gu;
-  typeof e.numbers < "u" && e.numbers && (n = /[\p{L}\p{N}]+/gu);
-  let t = r.match(n);
-  if (t.length <= 1)
-    return null;
-  const l = typeof e.lower < "u" ? e.lower : !1;
-  return t.map((u) => a(u, l)).join(" ");
+function g(n, t = { numbers: !1, lower: !1 }) {
+  const r = t?.numbers ? /[\p{L}\p{N}]+/gu : /[\p{L}]+/gu;
+  let e = n.match(r);
+  return e.length <= 1 ? null : e.map((l) => a(l, t?.lower)).join(" ");
 }
-function m(r, e = { numbers: !1, lower: !1 }) {
-  let n = /[\p{L}-]+/gu;
-  typeof e.numbers < "u" && e.numbers && (n = /[\p{L}\p{N}-]+/gu);
-  let t = r.match(n);
-  if (t.length <= 1)
-    return null;
-  const l = typeof e.lower < "u" ? e.lower : !1;
-  return t.map((u) => a(u, l)).join("-");
+function w(n, t = { numbers: !1, lower: !1 }) {
+  const r = t?.numbers ? /[\p{L}\p{N}-]+/gu : /[\p{L}-]+/gu;
+  let e = n.match(r);
+  return e.length <= 1 ? null : e.map((l) => a(l, t?.lower)).join("-");
 }
-function g(r, e = 32, n = "...") {
-  return r.substring(0, e) + n;
+function L(n, t = 32, r = "...") {
+  return n.substring(0, t) + r;
 }
 export {
-  s as camelCase,
+  o as camelCase,
   a as capitalize,
-  o as flatCase,
-  p as kebabCase,
+  p as flatCase,
+  f as kebabCase,
   i as pad,
-  w as pascalCase,
-  c as snakeCase,
-  d as titleCase,
-  m as trainCase,
-  g as truncate
+  c as pascalCase,
+  m as snakeCase,
+  g as titleCase,
+  w as trainCase,
+  L as truncate
 };

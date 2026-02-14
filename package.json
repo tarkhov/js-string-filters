@@ -1,11 +1,9 @@
 {
   "name": "string-filters",
-  "version": "0.3.1",
+  "version": "0.3.2",
   "description": "Fast native javascript string filters library.",
   "type": "module",
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "main": "./dist/string-filters.umd.cjs",
   "module": "./dist/string-filters.js",
   "exports": {
