@@ -1,6 +1,6 @@
 {
   "name": "string-filters",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Fast native javascript string filters library.",
   "type": "module",
   "files": [
