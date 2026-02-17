@@ -1,9 +1,8 @@
 {
   "name": "string-filters",
-  "version": "0.3.4",
+  "version": "0.3.5",
   "description": "Fast native javascript string filters library.",
   "type": "module",
-  "types": "./dist/types/main.d.ts",
   "files": [
     "dist"
   ],
@@ -11,6 +10,7 @@
   "module": "./dist/string-filters.js",
   "exports": {
     ".": {
+      "types": "./dist/types/main.d.ts",
       "import": "./dist/string-filters.js",
       "require": "./dist/string-filters.umd.cjs"
     }
