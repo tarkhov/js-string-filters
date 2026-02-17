@@ -41,10 +41,10 @@ npm install string-filters
 
 ### Manually
 
-[Download](https://github.com/tarkhov/js-string-filters/releases/download/v0.1.0/js-string-filters.zip) package and unpack it or use following commands:
+[Download](https://github.com/tarkhov/js-string-filters/releases/download/v0.3.6/js-string-filters.zip) package and unpack it or use following commands:
 
 ```bash
-wget https://github.com/tarkhov/js-string-filters/releases/download/v0.1.0/js-string-filters.zip
+wget https://github.com/tarkhov/js-string-filters/releases/download/v0.3.6/js-string-filters.zip
 unzip js-string-filters.zip
 ```
 

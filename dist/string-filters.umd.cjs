@@ -1,5 +1,5 @@
 /*! 
- * String Filters v0.3.5
+ * String Filters v0.3.6
  * Homepage (https://github.com/tarkhov/js-string-filters)
  * Copyright 2026 Tarkhov
  * License: MIT
