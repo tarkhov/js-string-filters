@@ -1,8 +1,9 @@
 {
   "name": "string-filters",
-  "version": "0.3.3",
+  "version": "0.3.4",
   "description": "Fast native javascript string filters library.",
   "type": "module",
+  "types": "./dist/types/main.d.ts",
   "files": [
     "dist"
   ],
@@ -27,7 +28,8 @@
     "sanitize",
     "input-mask",
     "javascript",
-    "js"
+    "js",
+    "typescript"
   ],
   "repository": {
     "type": "git",
@@ -41,10 +43,11 @@
   "homepage": "https://github.com/tarkhov/js-string-filters",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && tsc",
     "preview": "vite preview"
   },
   "devDependencies": {
+    "typescript": "^5.9.3",
     "vite": "^7.3.1",
     "vite-plugin-banner": "^0.8.1"
   }
