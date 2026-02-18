@@ -8,6 +8,7 @@ import snakeCase from './snakeCase'
 import titleCase from './titleCase'
 import trainCase from './trainCase'
 import truncate from './truncate'
+import useProto from './useProto'
 
 export {
   camelCase,
@@ -19,5 +20,6 @@ export {
   snakeCase,
   titleCase,
   trainCase,
-  truncate
+  truncate,
+  useProto
 }

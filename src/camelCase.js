@@ -3,7 +3,7 @@ import capitalize from './capitalize'
 export default function (string, options = { numbers: false, lower: false }) {
   const pattern = (options?.numbers) ? /[\p{L}\p{N}]+/gu : /\p{L}+/gu
   let words = string.match(pattern)
-  if (words.length <= 1) return null
+  if (!words || words.length <= 1) return null
   let first = words.shift()
   const lower = options?.lower
   if (lower) first = first.toLowerCase()

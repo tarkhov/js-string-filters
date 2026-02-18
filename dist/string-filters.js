@@ -4,59 +4,83 @@
  * Copyright 2026 Tarkhov
  * License: MIT
  */
-function l(n, t = !1) {
-  let r = n.charAt(0).toUpperCase(), e = n.slice(1);
-  return t && (e = e.toLowerCase()), `${r}${e}`;
+function u(t, n = !1) {
+  let r = t.charAt(0).toUpperCase(), e = t.slice(1);
+  return n && (e = e.toLowerCase()), `${r}${e}`;
 }
-function o(n, t = { numbers: !1, lower: !1 }) {
-  const r = t?.numbers ? /[\p{L}\p{N}]+/gu : new RegExp("\\p{L}+", "gu");
-  let e = n.match(r);
-  if (e.length <= 1) return null;
+function i(t, n = { numbers: !1, lower: !1 }) {
+  const r = n?.numbers ? /[\p{L}\p{N}]+/gu : new RegExp("\\p{L}+", "gu");
+  let e = t.match(r);
+  if (!e || e.length <= 1) return null;
   let a = e.shift();
-  const u = t?.lower;
-  return u && (a = a.toLowerCase()), e = e.map((s) => l(s, u)), e.unshift(a), e.join("");
+  const o = n?.lower;
+  return o && (a = a.toLowerCase()), e = e.map((s) => u(s, o)), e.unshift(a), e.join("");
 }
-function p(n, t = !1) {
-  let r = t ? /[\p{L}\p{N}]+/gu : new RegExp("\\p{L}+", "gu"), e = n.match(r);
-  return e.length <= 1 ? null : e.map((a) => a.toLowerCase()).join("");
+function l(t, n = !1) {
+  let r = n ? /[\p{L}\p{N}]+/gu : new RegExp("\\p{L}+", "gu"), e = t.match(r);
+  return !e || e.length <= 1 ? null : e.map((a) => a.toLowerCase()).join("");
 }
-function f(n, t = !1) {
-  let r = t ? /[\p{L}\p{N}-]+/gu : /[\p{L}-]+/gu, e = n.match(r);
-  return e.length <= 1 ? null : e.map((a) => a.toLowerCase()).join("-");
+function p(t, n = !1) {
+  let r = n ? /[\p{L}\p{N}-]+/gu : /[\p{L}-]+/gu, e = t.match(r);
+  return !e || e.length <= 1 ? null : e.map((a) => a.toLowerCase()).join("-");
 }
-function i(n, t, r = " ") {
-  const e = Math.floor((t - n.length) / 2) + n.length;
-  return n.padStart(e, r).padEnd(t, r);
+function f(t, n, r = " ") {
+  const e = Math.floor((n - t.length) / 2) + t.length;
+  return t.padStart(e, r).padEnd(n, r);
 }
-function c(n, t = { numbers: !1, lower: !1 }) {
-  const r = t?.numbers ? /[\p{L}\p{N}]+/gu : new RegExp("\\p{L}+", "gu");
-  let e = n.match(r);
-  return e.length <= 1 ? null : e.map((a) => l(a, t?.lower)).join("");
+function c(t, n = { numbers: !1, lower: !1 }) {
+  const r = n?.numbers ? /[\p{L}\p{N}]+/gu : new RegExp("\\p{L}+", "gu");
+  let e = t.match(r);
+  return !e || e.length <= 1 ? null : e.map((a) => u(a, n?.lower)).join("");
 }
-function g(n, t = !1) {
-  let r = t ? /[\p{L}\p{N}_]+/gu : /[\p{L}_]+/gu, e = n.match(r);
-  return e.length <= 1 ? null : e.map((a) => a.toLowerCase()).join("_");
+function g(t, n = !1) {
+  let r = n ? /[\p{L}\p{N}_]+/gu : /[\p{L}_]+/gu, e = t.match(r);
+  return !e || e.length <= 1 ? null : e.map((a) => a.toLowerCase()).join("_");
 }
-function m(n, t = !1) {
-  return n.replace(new RegExp("\\p{L}+", "gu"), (r) => l(r, t));
+function h(t, n = !1) {
+  return t.replace(new RegExp("\\p{L}+", "gu"), (r) => u(r, n));
 }
-function L(n, t = { numbers: !1, lower: !1 }) {
-  const r = t?.numbers ? /[\p{L}\p{N}-]+/gu : /[\p{L}-]+/gu;
-  let e = n.match(r);
-  return e.length <= 1 ? null : e.map((a) => l(a, t?.lower)).join("-");
+function m(t, n = { numbers: !1, lower: !1 }) {
+  const r = n?.numbers ? /[\p{L}\p{N}-]+/gu : /[\p{L}-]+/gu;
+  let e = t.match(r);
+  return !e || e.length <= 1 ? null : e.map((a) => u(a, n?.lower)).join("-");
 }
-function w(n, t = 32, r = "...") {
-  return n.substring(0, t) + r;
+function C(t, n = 32, r = "...") {
+  return t.substring(0, n) + r;
+}
+function L() {
+  String.prototype.camelCase = function(t) {
+    return i(this, t);
+  }, String.prototype.capitalize = function(t) {
+    return u(this, t);
+  }, String.prototype.flatCase = function(t) {
+    return l(this, t);
+  }, String.prototype.kebabCase = function(t) {
+    return p(this, t);
+  }, String.prototype.pad = function(t, n) {
+    return f(this, t, n);
+  }, String.prototype.pascalCase = function(t) {
+    return c(this, t);
+  }, String.prototype.snakeCase = function(t) {
+    return g(this, t);
+  }, String.prototype.titleCase = function(t) {
+    return h(this, t);
+  }, String.prototype.trainCase = function(t) {
+    return m(this, t);
+  }, String.prototype.truncate = function(t, n) {
+    return C(this, t, n);
+  };
 }
 export {
-  o as camelCase,
-  l as capitalize,
-  p as flatCase,
-  f as kebabCase,
-  i as pad,
+  i as camelCase,
+  u as capitalize,
+  l as flatCase,
+  p as kebabCase,
+  f as pad,
   c as pascalCase,
   g as snakeCase,
-  m as titleCase,
-  L as trainCase,
-  w as truncate
+  h as titleCase,
+  m as trainCase,
+  C as truncate,
+  L as useProto
 };

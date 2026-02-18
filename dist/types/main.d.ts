@@ -8,4 +8,5 @@ import snakeCase from './snakeCase';
 import titleCase from './titleCase';
 import trainCase from './trainCase';
 import truncate from './truncate';
-export { camelCase, capitalize, flatCase, kebabCase, pad, pascalCase, snakeCase, titleCase, trainCase, truncate };
+import useProto from './useProto';
+export { camelCase, capitalize, flatCase, kebabCase, pad, pascalCase, snakeCase, titleCase, trainCase, truncate, useProto };
