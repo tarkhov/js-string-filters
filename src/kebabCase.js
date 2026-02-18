@@ -1,4 +1,5 @@
 export default function (string, numbers = false) {
+  if (!string) return null
   let pattern = (numbers) ? /[\p{L}\p{N}-]+/gu : /[\p{L}-]+/gu
   let words = string.match(pattern)
   if (!words || words.length <= 1) return null
